@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly - Agenda</title>
+    <link rel="stylesheet" href="styles/agenda.css">
+    <link rel="stylesheet" href="styles/side-header.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Agenda</h2>
+        <div class="calendar-controls">
+            <div class="calendar-nav">
+                <button id="prev-month" class="btn btn-secondary">&lt; Mês Anterior</button>
+                <h3 id="current-month">Junho 2023</h3>
+                <button id="next-month" class="btn btn-secondary">Próximo Mês &gt;</button>
+            </div>
+            <button id="add-event" class="btn btn-primary">+ Novo Evento</button>
+        </div>
+        <div id="calendar" class="calendar">
+            <!-- O calendário será gerado dinamicamente com JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Adicionar Evento</h3>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Título</label>
+                    <input type="text" id="task-title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Descrição</label>
+                    <textarea id="task-description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task-image">Imagem (URL)</label>
+                    <input type="text" id="task-image" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="task-time">Horário</label>
+                    <input type="time" id="task-time" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="task-date">Data</label>
+                    <input type="date" id="task-date" class="form-control" required>
+                </div>
+                <div class="btn-group">
+                    <button type="button" id="cancel-task" class="btn btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Compartilhamento -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <h3>Compartilhar Agenda</h3>
+            <div class="form-group">
+                <label>Código da Agenda:</label>
+                <div class="code-display">
+                    <span id="share-code" class="code-text"></span>
+                    <button id="copy-code" class="btn btn-secondary">Copiar</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Link de Compartilhamento:</label>
+                <div class="link-display">
+                    <input type="text" id="share-link" class="form-control" readonly>
+                    <button id="copy-link" class="btn btn-secondary">Copiar</button>
+                </div>
+            </div>
+            <div class="share-info">
+                <p><strong>Instruções:</strong></p>
+                <ul>
+                    <li>Compartilhe o código ou link com sua equipe</li>
+                    <li>Quem acessar sem senha poderá apenas visualizar</li>
+                    <li>Use a senha de administrador para editar</li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button type="button" id="close-share" class="btn btn-primary">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/agenda.js"></script>
+    <script src="scripts/side-header.js"></script>
+</body>
+</html>

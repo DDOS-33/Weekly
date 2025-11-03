@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <!-- Container para os gifs flutuantes -->
+    <div id="floating-gifs"></div>
+    
+    <div class="login-container">
+        <div class="login-card">
+            <h1>Weekly</h1>
+            
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="login">Entrar</button>
+                <button class="tab-btn" data-tab="create">Criar Agenda</button>
+            </div>
+            
+            <form id="login-form" class="tab-content active">
+                <div class="form-group">
+                    <label for="agenda-code">Código da Agenda</label>
+                    <input type="text" id="agenda-code" class="form-control" placeholder="Digite o código da agenda" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha (opcional)</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Senha para editar">
+                    <small>Deixe em branco para apenas visualizar</small>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Entrar na Agenda</button>
+            </form>
+            
+            <form id="create-form" class="tab-content">
+                <div class="form-group">
+                    <label for="agenda-name">Nome da Agenda</label>
+                    <input type="text" id="agenda-name" class="form-control" placeholder="Ex: Equipe de Desenvolvimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Senha de Administrador</label>
+                    <input type="password" id="admin-password" class="form-control" placeholder="Crie uma senha segura" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" id="confirm-password" class="form-control" placeholder="Digite a senha novamente" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Criar Agenda</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>Compartilhe o código da agenda com sua equipe!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/login.js"></script>
+    <script src="scripts/floating-gifs.js"></script>
+</body>
+</html>
